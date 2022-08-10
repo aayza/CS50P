@@ -33,11 +33,11 @@ def coke_machine():
         cost = -cost
     print("Change owed: " + str(cost))
 
+
 # coke_machine()
 
 
 # Twttr
-
 def twitter():
     text = input("Input: ")
     result = ""
@@ -50,4 +50,52 @@ def twitter():
     print("Output: " + result)
 
 
-twitter()
+# twitter()
+
+
+# Vanity Plates
+def main():
+    plate = input("Plate: ")
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
+
+
+def is_valid(s):
+    if 2 < len(s) < 6 and s[0:2].isalpha() and s.isalnum():
+        length = len(s)
+        firstDigit = None
+        for char in range(len(s)):
+            if s[char].isdigit() and char < length - 1:
+                if firstDigit is None:
+                    firstDigit = s[char]
+                    if firstDigit == '0':
+                        return False
+                if s[char + 1].isalpha():
+                    return False
+        return True
+    else:
+        return False
+
+# main()
+
+# Nutrition Facts
+
+def checkFruit():
+
+    fruits = {
+        "Apple": "130",
+        "Avocado": "50",
+        "Banana": "110",
+        "Cantaloupe": "50"
+    }
+
+    variable = input("Fruit: ").title()
+    if variable in fruits:
+        for cals in fruits:
+            if cals == variable:
+                print("calories: ", fruits[cals])
+
+
+checkFruit()

@@ -13,7 +13,7 @@ def forLoop():
         print("woof")
 
 
-# forLoop()
+forLoop()
 
 
 def anotherLoop():
